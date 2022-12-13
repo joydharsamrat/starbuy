@@ -1,0 +1,20 @@
+.slide1 {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(https://i.ibb.co/ByH3jmk/car-2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slide2 {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(https://i.ibb.co/bWGf8yH/dream.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slide3 {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(https://i.ibb.co/rcvkZKr/shoping.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
