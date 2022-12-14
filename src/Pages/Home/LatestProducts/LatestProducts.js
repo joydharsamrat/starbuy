@@ -3,14 +3,14 @@ import React from 'react';
 import ProductsCard from '../../../Components/ProductsCard';
 
 const LatestProducts = () => {
-
-
     const { data: products = [], refetch } = useQuery({
         queryKey: ["products"],
         queryFn: async () => {
             const res = await fetch('https://starbuy-server.vercel.app/latestProducts')
             const data = await res.json()
+            console.log('xyz')
             return data;
+
         }
     })
     return (

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
 import { authContext } from '../Context/AuthProvider';
 
-const ProductsCard = ({ product, refetch }) => {
+const ProductsCard = ({ product, refetch, setBought }) => {
     const { user } = useContext(authContext)
     const { name, price, img, seller, _id } = product;
 
@@ -29,6 +29,7 @@ const ProductsCard = ({ product, refetch }) => {
                     toast.success("Product Purchased Successfully")
                 }
                 refetch()
+                setBought(true)
             })
     }
 

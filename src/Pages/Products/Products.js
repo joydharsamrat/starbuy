@@ -1,23 +1,29 @@
-import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductsCard from '../../Components/ProductsCard';
 import SmallSpinner from '../../Components/SmallSpinner';
 
 const Products = () => {
+    const [isLoading, setIsLoading] = useState(false)
+    const [products, setProducts] = useState([])
+    const [bought, setBought] = useState(false)
 
-    const { data: products = [], isLoading, refetch } = useQuery({
-        queryKey: ["products"],
-        queryFn: async () => {
-            const res = await fetch('https://starbuy-server.vercel.app/products')
-            const data = await res.json()
-            return data;
-        }
-    })
+    useEffect(() => {
+        setIsLoading(true)
+        fetch('https://starbuy-server.vercel.app/products')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setProducts(data)
+                setIsLoading(false)
+            })
+    }, [bought])
     return (
         <>
 
             {
-                isLoading ? <SmallSpinner></SmallSpinner> :
+                isLoading ? <div className='h-screen flex items-center justify-center'>
+                    <SmallSpinner></SmallSpinner>
+                </div> :
                     <div>
 
                         <h1 className='text-5xl text-center my-12 dark:text-white font-bold'>Products</h1>
@@ -30,7 +36,7 @@ const Products = () => {
 
                         <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 lg:mx-12 my-12 min-h-screen'>
                             {
-                                products?.map(product => <ProductsCard key={product._id} product={product} refetch={refetch}></ProductsCard>)
+                                products?.map(product => <ProductsCard key={product._id} product={product} setBought={setBought}></ProductsCard>)
                             }
                         </div>
                     </div>
