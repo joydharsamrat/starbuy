@@ -19,6 +19,9 @@ const Products = () => {
             {
                 isLoading ? <SmallSpinner></SmallSpinner> :
                     <div>
+
+                        <h1 className='text-5xl text-center my-12 dark:text-white font-bold'>Products</h1>
+
                         {
                             products.length || <div className='h-screen flex justify-center items-center'>
                                 <h1 className='text-7xl text-red-700'>No Products To Show</h1>
