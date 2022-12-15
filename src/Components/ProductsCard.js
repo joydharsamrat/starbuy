@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
 import { authContext } from '../Context/AuthProvider';
+import { FaRupeeSign } from "react-icons/fa";
 
 const ProductsCard = ({ product, refetch, setBought }) => {
     const { user } = useContext(authContext)
@@ -40,7 +41,7 @@ const ProductsCard = ({ product, refetch, setBought }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{name}</h2>
-                <p>Price: INR{price}</p>
+                <p>Price: <FaRupeeSign></FaRupeeSign>{price}</p>
                 {
                     user?.email === seller || <button onClick={handelBuyProduct} className="btn btn-outline dark:text-white">Buy Now</button>
                 }

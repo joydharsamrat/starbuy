@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import SmallSpinner from '../../Components/SmallSpinner';
 import { authContext } from '../../Context/AuthProvider';
+import { FaRupeeSign } from "react-icons/fa";
 
 const MyOrders = () => {
     const { user } = useContext(authContext);
@@ -53,7 +54,7 @@ const MyOrders = () => {
                                                 {product.name}
 
                                             </td>
-                                            <td>INR{product.price}</td>
+                                            <td><FaRupeeSign></FaRupeeSign>{product.price}</td>
                                         </tr>
                                         )}
 
