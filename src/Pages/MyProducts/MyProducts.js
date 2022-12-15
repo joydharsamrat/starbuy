@@ -55,7 +55,11 @@ const MyProducts = () => {
                                                 {product.name}
 
                                             </td>
-                                            <td><FaRupeeSign></FaRupeeSign>{product.price}</td>
+                                            <td>
+                                                <div className='flex items-center'>
+                                                    <FaRupeeSign></FaRupeeSign>{product.price}
+                                                </div>
+                                            </td>
                                             <th>
                                                 {product.status}
                                             </th>

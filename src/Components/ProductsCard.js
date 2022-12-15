@@ -41,7 +41,7 @@ const ProductsCard = ({ product, refetch, setBought }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{name}</h2>
-                <p>Price: <FaRupeeSign></FaRupeeSign>{price}</p>
+                <div className='flex items-center gap-2'>Price: <p className='flex items-center'><FaRupeeSign></FaRupeeSign>{price}</p></div>
                 {
                     user?.email === seller || <button onClick={handelBuyProduct} className="btn btn-outline dark:text-white">Buy Now</button>
                 }

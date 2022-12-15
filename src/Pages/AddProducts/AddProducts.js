@@ -48,7 +48,7 @@ const AddProducts = () => {
                             if (data.acknowledged) {
                                 toast.success('Product added successfully')
                                 setLoading(false)
-                                navigate('/')
+                                navigate('/myProducts')
                             }
                         })
                         .catch(err => {
